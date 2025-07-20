@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+  <img src="https://giffiles.alphacoders.com/214/214557.gif">
 </div>
 
 ## 🚀 About Me
@@ -92,7 +92,7 @@
 ## 📈 Coding Activity
 
 <div align="center">
-  <img src="https://wakatime.com/share/@AnindaNath/8f4c6a8e-4f64-4d8c-8e5a-6b2f5c8d9e0a.svg" alt="Wakatime Stats" width="500">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=AnindaNath&theme=radical&hide_border=true&layout=compact" alt="Coding Activity" />
 </div>
 
 ## 🤝 Let's Connect!
@@ -112,21 +112,101 @@
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote" />
 </div>
 
-## 🐍 Watch my contribution graph get eaten by the snake!
+## 🐍 Contribution Snake Animation
 <div align="center">
-  <img src="https://github.com/AnindaNath/AnindaNath/blob/output/github-contribution-grid-snake.svg" alt="Snake eating my contributions" />
+  
+![Snake animation](https://raw.githubusercontent.com/AnindaNath/AnindaNath/output/github-contribution-grid-snake-dark.svg)
+
 </div>
 
+<details>
+<summary>🔧 Want to add this snake to your profile? Click here!</summary>
+
+### Setup Instructions:
+1. Create `.github/workflows/snake.yml` in your repository
+2. Add this workflow code:
+
+```yaml
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # every 12 hours
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Generate github-contribution-grid-snake.svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: AnindaNath
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Push github-contribution-grid-snake.svg to the output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+3. Run the workflow manually first from Actions tab
+4. The snake will update automatically every 12 hours!
+
+</details>
+
 ## 📊 Weekly Development Breakdown
+
+<div align="center">
+
+### ⏰ This Week's Coding Time
 <!--START_SECTION:waka-->
 ```text
-JavaScript   8 hrs 15 mins   ████████████░░░░░░░░░░░░░   48.22%
-Python       4 hrs 32 mins   ██████░░░░░░░░░░░░░░░░░░░   26.51%
-React        2 hrs 45 mins   ████░░░░░░░░░░░░░░░░░░░░░   16.12%
-CSS          1 hr 8 mins     █░░░░░░░░░░░░░░░░░░░░░░░░   06.68%
-Other        25 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   02.47%
+No activity tracked this week
 ```
 <!--END_SECTION:waka-->
+
+<details>
+<summary>🔧 Want to track your coding time? Click here!</summary>
+
+### Setup Wakatime Integration:
+1. Sign up at [Wakatime.com](https://wakatime.com/)
+2. Install Wakatime plugin in your code editor
+3. Add this to your repository's `.github/workflows/waka-readme.yml`:
+
+```yaml
+name: Waka Readme
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 18 * * *'
+
+jobs:
+  update-readme:
+    name: Update this repo's README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: athul/waka-readme@master
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+```
+
+4. Add your Wakatime API key to repository secrets
+5. The stats will update automatically!
+
+</details>
+
+</div>
 
 ---
 
